@@ -1,0 +1,22 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "Rentr Property Listing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gedons/Rentr-FRONT.git"
+  },
+  "keywords": [
+    "Front"
+  ],
+  "author": "Gedoni Ani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gedons/Rentr-FRONT/issues"
+  },
+  "homepage": "https://github.com/gedons/Rentr-FRONT#readme"
+}
