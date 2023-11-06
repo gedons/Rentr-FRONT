@@ -1,22 +1,35 @@
 {
-  "name": "front",
-  "version": "1.0.0",
-  "description": "Rentr Property Listing",
-  "main": "index.js",
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gedons/Rentr-FRONT.git"
+  "dependencies": {
+    "@google-cloud/vision": "^4.0.2",
+    "@headlessui/vue": "^1.7.14",
+    "@heroicons/vue": "^2.0.18",
+    "@tailwindcss/forms": "^0.5.2",
+    "@teamhanko/hanko-elements": "^0.8.3",
+    "axios": "^1.5.1",
+    "chart.js": "^3.8.0",
+    "chartjs-adapter-moment": "^1.0.0",
+    "flatpickr": "^4.6.13",
+    "moment": "^2.29.4",
+    "vue": "^3.3.4",
+    "vue-flatpickr-component": "^9.0.6",
+    "vue-router": "^4.2.5",
+    "vue-toast-notification": "^3.1.1",
+    "vuex": "^4.1.0"
   },
-  "keywords": [
-    "Front"
-  ],
-  "author": "Gedoni Ani",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gedons/Rentr-FRONT/issues"
-  },
-  "homepage": "https://github.com/gedons/Rentr-FRONT#readme"
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "vite": "^4.4.5"
+  }
 }
