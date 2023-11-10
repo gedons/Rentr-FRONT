@@ -3,88 +3,62 @@
         <div class="overflow-hidden">
             <!-- Header start -->
     
-            <header id="sticky-header" class="absolute left-0 top-[15px] lg:top-[30px] xl:top-[40px] w-full z-10">
+           <header id="sticky-header" class="absolute left-0 top-[15px] lg:top-[30px] xl:top-[40px] w-full z-10">
                 <div class="container">
                     <div class="grid grid-cols-12">
                         <div class="col-span-12">
                             <div class="flex flex-wrap items-center justify-between">
-                                <a href="index.html" class="block">
+                                <router-link :to="{name: 'Index'}" class="block">
                                     <img class="w-full h-full white-logo" src="/src/assets/assets/images/logo/logo-white.png" loading="lazy" width="99" height="46" alt="brand logo">
                                     <img class="w-full h-full hidden dark-logo" src="/src/assets/assets/images/logo/logo.svg" loading="lazy" width="99" height="46" alt="brand logo">
-                                </a>
-                                <nav class="flex flex-wrap justify-center">
-                                    <ul class="hidden lg:flex flex-wrap items-center font-lora text-[16px] xl:text-[18px] leading-none text-black">
-                                        <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-                                            <a href="#" class="sticky-dark transition-all text-white hover:text-secondary">Home</a>    
-                                        </li>
-                                        <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-                                            <a href="about.html" class="sticky-dark transition-all text-white hover:text-secondary">About</a>
-                                        </li>
-                                        <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-                                            <a href="#" class="sticky-dark transition-all text-white hover:text-secondary">Properties</a>
-                                        </li>                                       
-                                        <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-
-                                            <a href="#" class="sticky-dark transition-all text-white hover:text-secondary">Blog</a>    
-                                        </li>
-                                        <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-    
-                                            <a href="contact-us.html" class="sticky-dark transition-all text-white hover:text-secondary">Contact</a>
-    
-                                        </li>
+                                </router-link>
+                                <nav class="flex flex-wrap justify-between md:justify-center">
+                                    <ul class="hidden md:flex lg:flex items-center px-4 mx-auto font-lora text-[16px] xl:text-[18px] text-gray-100 leading-none">
+                                        <li class="mr-7 xl:mr-[40px] relative group py-[20px]"><a class="sticky-dark transition-all text-white hover:text-secondary" href="#">Home</a></li>
+                                        <li class="mr-7 xl:mr-[40px] relative group py-[20px]"><a class="sticky-dark transition-all text-white hover:text-secondary" href="#">Category</a></li>
+                                        <li class="mr-7 xl:mr-[40px] relative group py-[20px]"><a class="sticky-dark transition-all text-white hover:text-secondary" href="#">Collections</a></li>
+                                        <li class="mr-7 xl:mr-[40px] relative group py-[20px]"><a class="sticky-dark transition-all text-white hover:text-secondary" href="#">Contact Us</a></li>
                                     </ul>
-    
                                     <ul class="flex flex-wrap items-center">
-                                        <li class="sm:mr-5 xl:mr-[20px] relative group"><a href="#">
-                                                <img src="/src/assets/assets/images/user/avater.png" loading="lazy" width="62" height="62" alt="avater">
+                                        <li class="sm:mr-5 xl:mr-[20px] relative group">
+                                            <a href="#">
+                                                <img src="/src/assets/assets/images/user/avater.png" loading="lazy" width="62" height="62" alt="avatar">
                                             </a>
-    
-                                            <ul class="list-none bg-white drop-shadow-[0px_6px_10px_rgba(0,0,0,0.2)] rounded-[12px] flex flex-wrap flex-col w-[180px] absolute top-[120%] sm:left-1/2 sm:-translate-x-1/2 transition-all
-                    group-hover:top-[60px] invisible group-hover:visible opacity-0 group-hover:opacity-100 right-0
-                    
-                    ">
+                                            <ul class="list-none bg-white drop-shadow-[0px_6px_10px_rgba(0,0,0,0.2)] rounded-[12px] flex flex-wrap flex-col w-[180px] absolute top-[120%] sm:left-1/2 sm:-translate-x-1/2 transition-all group-hover:top-[60px] invisible group-hover:visible opacity-0 group-hover:opacity-100 right-0">
                                                 <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                    <a href="login.html" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-t-[12px]">login</a>
+                                                    <router-link :to="{ name: 'Login' }" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-t-[12px]">Login</router-link>
                                                 </li>
-    
-                                                <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                    <a href="register.html" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-b-[12px]">register</a>
+                                                <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover.border-solid transition-all">
+                                                    <router-link :to="{ name: 'AccountMode' }" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-b-[12px]">Register</router-link>
                                                 </li>
-    
-    
                                             </ul>
                                         </li>
-                                        <!-- <li>
-                                            <a href="add-properties.html" class="sticky-btn before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-white before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto hover:text-primary before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white hidden sm:block text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-secondary after:rounded-md after:transition-all">Add Property</a>
-                                        </li> -->
                                         <li class="ml-2 sm:ml-5 lg:hidden">
-                                            <a href="#offcanvas-mobile-menu" class="offcanvas-toggle flex text-[#016450] hover:text-secondary">
+                                            <button class="offcanvas-toggle flex text-[#016450] hover:text-secondary"  @click="toggleMobileMenu">
                                                 <svg width="24" height="24" class="fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                     <path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z" />
                                                 </svg>
-                                            </a>
+                                            </button>
                                         </li>
                                     </ul>
                                 </nav>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
-            <!-- offcanvas-overlay start -->
-            <div class="offcanvas-overlay hidden fixed inset-0 bg-black opacity-50 z-50"></div>
-            <!-- offcanvas-overlay end -->
-            <!-- offcanvas-mobile-menu start -->
-            <div id="offcanvas-mobile-menu" class="offcanvas left-0 transform -translate-x-full fixed font-normal text-sm top-0 z-50 h-screen xs:w-[300px] lg:w-[380px] transition-all ease-in-out duration-300 bg-white">
-    
-                <div class="py-12 pr-5 h-[100vh] overflow-y-auto">
+                    
+            <!--mobile-menu start -->
+            <div id="mobile-menu" :class="{ 'translate-x-0': isMobileMenuOpen }" v-show="isMobileMenuOpen" class="offcanvas left-0 transform fixed font-normal text-sm top-0 z-50 h-screen xs:w-[300px] lg:w-[380px] transition-all ease-in-out duration-300 bg-white">
+                <div class="py-12 pl-5 h-[100vh] overflow-y-auto"> <!-- Set left padding instead of right -->
                     <!-- close button start -->
-                    <button class="offcanvas-close text-primary text-[25px] w-10 h-10 absolute right-0 top-0 z-[1]" aria-label="offcanvas">x</button>
+                    <button class="offcanvas-close text-primary text-[25px] w-10 h-10 absolute right-0 top-0 z-[1]" @click="closeMobileMenu" aria-label="offcanvas">x</button>
                     <!-- close button end -->
     
                     <!-- offcanvas-menu start -->
     
-                    <nav class="offcanvas-menu mr-[20px]">
+                    <nav class="offcanvas-menu ml-[20px]">
                         <ul>
                             <li class="relative block border-b-primary border-b first:border-t first:border-t-primary">
                                 <a href="#" class="block capitalize font-normal text-black hover:text-secondary text-base my-2 py-1 px-5">Home</a>
@@ -114,7 +88,7 @@
     
                 </div>
             </div>
-            <!-- offcanvas-mobile-menu end -->
+            <!-- mobile-menu end -->
             <!-- Header end -->
     
             <!-- Hero section start -->
@@ -128,10 +102,10 @@
                                     <div class="grid grid-cols-12">
                                         <div class="col-span-12 lg:col-span-5 xl:col-span-6">
                                             <div class="slider-content max-w-[560px] relative z-[9]">
-                                                <div class="relative mb-5 sub_title">
+                                                <div class="relative mb-5  sub_title">
                                                     <span class="text-base text-white block">A new way to find Properties</span>
                                                 </div>
-                                                <h1 class="font-lora text-secondary text-[36px] sm:text-[50px] md:text-[68px] lg:text-[50px] leading-tight xl:text-2xl title font-normal">
+                                                <h1 class="font-lora text-secondary text-[36px] sm:text-[50px] md:text-[68px] lg:text-[50px] leading-tight xl:text-5xl title font-normal">
                                                     <span>Find your Most Suitable Property</span>
                                                 </h1>
     
@@ -4265,3 +4239,22 @@
     
     </div>
   </template>
+
+
+<script>
+export default {
+  data() {
+    return {
+      isMobileMenuOpen: false,
+    };
+  },
+  methods: {
+    toggleMobileMenu() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    },
+    closeMobileMenu() {
+      this.isMobileMenuOpen = false;
+    },
+  },
+};
+</script>

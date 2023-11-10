@@ -24,26 +24,26 @@
                 <div class="grid grid-cols-12">
                     <div class="col-span-12">
                         <div class="flex flex-wrap items-center justify-between">
-                            <a href="index.html" class="block">
+                            <router-link :to="{name: 'Index'}" class="block">
                                 <img class="w-full h-full" src="/src/assets/assets/images/logo/logo.svg" loading="lazy" width="99" height="46" alt="brand logo">
-                            </a>
+                            </router-link>
                             <nav class="flex flex-wrap items-center">
                                 <ul class="hidden lg:flex flex-wrap items-center font-lora text-[16px] xl:text-[18px] leading-none text-black">
                                     <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-                                        <a href="#" class="transition-all hover:text-secondary">Home</a> 
+                                        <router-link :to="{name: 'Index'}" class="transition-all hover:text-secondary">Home</router-link>
                                     </li>
                                     <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-                                        <a href="about.html" class="transition-all hover:text-secondary">About</a>
+                                        <router-link :to="{name: 'Index'}" class="transition-all hover:text-secondary">About</router-link>
                                     </li>
                                     <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-                                        <a href="#" class="transition-all hover:text-secondary">Properties</a>                                     
+                                        <router-link :to="{name: 'Index'}" class="transition-all hover:text-secondary">Properties</router-link>                                     
                                     </li>
                                                                      
                                     <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-                                        <a href="#" class="transition-all hover:text-secondary">Blog</a>                                    
+                                        <router-link :to="{name: 'Index'}" class="transition-all hover:text-secondary">Blog</router-link>                                    
                                     </li>
                                     <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-                                        <a href="contact-us.html" class="transition-all hover:text-secondary">Contact</a>
+                                        <router-link :to="{name: 'Index'}" class="transition-all hover:text-secondary">Contact</router-link>
                                     </li>
                                 </ul>
 
@@ -57,11 +57,11 @@
                 
                 ">
                                             <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                <a href="login.html" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white text-center my-[-1px] rounded-t-[12px]">login</a>
+                                                <router-link :to="{name: 'Login'}" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-t-[12px]">login</router-link>
                                             </li>
 
                                             <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                <a href="register.html" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white text-center my-[-1px] rounded-b-[12px]">register</a>
+                                                <router-link :to="{name: 'AccountMode'}" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-b-[12px]">Register</router-link>
                                             </li>
 
 
@@ -154,9 +154,10 @@
                         <img class="self-center xl:mb-0 w-full" src="/src/assets/assets/images/brands/brand1.png" alt="brand logo">
                         <div class="flex-1 mt-[15px]">
                             <div class="sm:flex flex-wrap md:items-center md:justify-center flex-col text-center">
-                                <h4 class="font-lora text-primary text-[22px] lg:text-[28px]">User </h4>                                
-                                <p class="mb-[15px] xl:mb-[30px] font-lora text-primary text-[16px]">46 Properties - and 10 Agents</p>
-                                <a href="agency-details.html" class="inline-block before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white text-center text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">View Details</a>
+                                <h4 class="font-lora text-primary text-[22px] lg:text-[28px]">User Account</h4>     
+                                <span class="underline text-secondary font-light block mb-[10px]">Buy And Rent Properties</span>                           
+                                <p class="mb-[15px] xl:mb-[30px] font-lora text-primary text-[16px]">click below to create</p>
+                                <router-link :to="{name: 'RegisterUser'}" class="inline-block before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white text-center text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">Create Account</router-link>
                             </div>
                         </div>
                     </div>
@@ -164,10 +165,10 @@
                         <img class="self-center xl:mb-0 w-full" src="/src/assets/assets/images/brands/brand2.png" alt="brand logo">
                         <div class="flex-1 mt-[15px]">
                             <div class="sm:flex flex-wrap md:items-center md:justify-center flex-col text-center">
-                                <h4 class="font-lora text-primary text-[22px] lg:text-[28px]">Tempark Estate<span class="text-secondary">.</span></h4>
-                                <span class="underline text-secondary font-light block mb-[10px]">3130 Grand Avenue,Florida</span>
-                                <p class="mb-[15px] xl:mb-[30px] font-lora text-primary text-[16px]">32 Properties - 7 Agents</p>
-                                <a href="agency-details.html" class="inline-block before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white text-center text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">View Details</a>
+                                <h4 class="font-lora text-primary text-[22px] lg:text-[28px]">Agent Account</h4>
+                                <span class="underline text-secondary font-light block mb-[10px]">List Properties</span>
+                                <p class="mb-[15px] xl:mb-[30px] font-lora text-primary text-[16px]">click below to create</p>
+                                <router-link :to="{name: 'RegisterAgent'}" class="inline-block before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white text-center text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">Create Account</router-link>
                             </div>
                         </div>
                     </div>
@@ -175,10 +176,10 @@
                         <img class="self-center xl:mb-0 w-full" src="/src/assets/assets/images/brands/brand3.png" alt="brand logo">
                         <div class="flex-1 mt-[15px]">
                             <div class="sm:flex flex-wrap md:items-center md:justify-center flex-col text-center">
-                                <h4 class="font-lora text-primary text-[22px] lg:text-[28px]">Juplex Estate<span class="text-secondary">.</span></h4>
+                                <h4 class="font-lora text-primary text-[22px] lg:text-[28px]">Property Owner</h4>
                                 <span class="underline text-secondary font-light block mb-[10px]">1228 McVaney Road,  North Carolina</span>
-                                <p class="mb-[15px] xl:mb-[30px] font-lora text-primary text-[16px]">25 Properties - 06 Agents</p>
-                                <a href="agency-details.html" class="inline-block before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white text-center text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">View Details</a>
+                                <p class="mb-[15px] xl:mb-[30px] font-lora text-primary text-[16px]">click below to create</p>
+                                <router-link :to="{name: 'RegisterOwner'}" class="inline-block before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[20px] py-[15px] capitalize font-medium text-white text-center text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">Create Account</router-link>
                             </div>
                         </div>
                     </div>                    
