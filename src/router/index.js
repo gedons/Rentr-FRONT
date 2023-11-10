@@ -23,6 +23,12 @@ const routes = [
     component: () => import("../views/RegisterUser.vue"),
   },
   {
+    path: "/verifyEmail",
+    name: "verifyEmail",
+    component: () => import("../views/verifyEmail.vue"),
+    meta: { requiresAuth: true },  
+  },
+  {
     path: "/registerAgent",
     name: "RegisterAgent",
     component: () => import("../views/RegisterAgent.vue"),
@@ -65,6 +71,21 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    // Route requires authentication
+    if (!store.state.user.token) {
+      // User is not authenticated
+      next("/login"); // Redirect to the login page
+    } else {
+      next(); // Continue to the requested route
+    }
+  } else {
+    // Route doesn't require authentication, proceed
+    next();
+  }
 });
 
 export default router;

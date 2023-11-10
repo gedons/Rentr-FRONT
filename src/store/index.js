@@ -10,18 +10,41 @@ const store = createStore({
       },
     },
     actions: {
-      login({ commit }, user) {
-        // Send a request to your Node.js backend to authenticate the user
-        // On successful authentication, save the token in session storage and update the store
-        sessionStorage.setItem("TOKEN", user.token);
-        commit("setUser", user);
+      async register({ commit }, userData) {
+        try {
+          const response = await axiosClient.post("/auth/register", userData);
+          const user = response.data; 
+          const authToken = user.token;
+          sessionStorage.setItem("TOKEN", authToken); 
+          commit("setUser", user);
+          return true;  
+        } catch (error) {
+          return false;  
+        }
       },
+
+      async login({ commit }, credentials) {
+        try {
+          const response = await axiosClient.post("/auth/login", credentials);
+          const user = response.data;
+          console.log(user);
+          console.log(user.token);
+          sessionStorage.setItem("TOKEN", user.token);
+          commit("setUser", user);
+          return true;  
+        } catch (error) {
+          return false;  
+        }
+      },
+     
       logout({ commit }) {
         // Clear the token from session storage and update the store
         sessionStorage.removeItem("TOKEN");
         commit("clearUser");
       },
+
     },
+
     mutations: {
       setUser(state, user) {
         state.user.token = user.token;

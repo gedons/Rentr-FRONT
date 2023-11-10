@@ -120,20 +120,20 @@
         <!-- offcanvas-mobile-menu end -->
         <!-- Header end -->
 
-        <section class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[70%]" style="background-image: url('/src/assets/assets/images/breadcrumb/bg-1.png')">
+        <section class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[70%]" style="background-image: url('/src/assets/assets/images/breadcrumb/bg-1.png');">
             <div class="container">
                 <div class="grid grid-cols-12">
                     <div class="col-span-12">
-                        <div class="max-w-[700px]  mx-auto text-center text-white relative z-[1]">
-                            <div class="mb-5"><span class="text-base block">User Account</span></div>
+                        <div class="max-w-[700px]  mx-auto text-center text-white relative z-[1]">                
                             <h1 class="font-lora text-[32px] sm:text-[50px] md:text-[68px] lg:text-[50px] leading-tight xl:text-5xl text-secondary font-medium">
-                                Login now!
+                                Registration Successful!!
                             </h1>
 
-                            <p class="text-base mt-5 max-w-[500px] mx-auto text-center">
-                                Huge number of propreties availabe here for buy and sell
-                                also you can find here co-living property as you like
+                            <p class="text-base mt-5 max-w-[500px] mb-3 mx-auto text-center">
+                                Please check your email for account verification
                             </p>
+
+                            <router-link :to="{name: 'Login'}" class="text-base mt-7 underline text-secondary max-w-[500px] mx-auto text-center">Proceed to login</router-link>
                         </div>
                     </div>
                 </div>
@@ -141,57 +141,6 @@
         </section>
         <!-- Hero section end -->
 
-          <!-- contact form start -->
-          <div class="py-[80px] lg:py-[120px]">
-            <div class="container">
-                <form @submit.prevent="loginUser">
-                    <div class="grid grid-cols-12 gap-x-[30px] mb-[-30px]">
-                        <div class="col-span-12 lg:col-span-6 mb-[30px]">
-                            <h2 class="font-lora text-primary text-[24px] sm:text-[30px] leading-[1.277] xl:text-xl mb-[15px] font-medium">
-                                Login Account<span class="text-secondary">.</span></h2>
-
-                            <p class="max-w-[465px] mb-[50px]">
-                                Huge number of propreties availabe here for buy, sell and Rent.                                
-                            </p>
-                            <div class="grid grid-cols-12 gap-x-[20px] gap-y-[35px]">
-                                <div class="col-span-12">
-                                    <input  v-model="credentials.email" class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="email" placeholder="Email">
-                                </div>
-                        
-                                <div class="col-span-12">
-                                    <input  v-model="credentials.password" class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="password" placeholder="Password">
-                                </div>
-
-                                <div class="col-span-12">                                    
-                                    <div class="flex flex-wrap items-center justify-between w-full sm:w-[400px]">
-                                        <div class="flex flex-wrap mt-[15px] items-center">
-                                            <input type="checkbox" id="checkbox1"/>
-                                            <label for="checkbox1" class="ml-[5px] cursor-pointer"> Remember                        
-                                                <span class="text-secondary">password</span></label><br>
-                                        </div>
-                                        <div class="flex flex-wrap mt-[15px] items-center">                                                                                                              
-                                                <router-link :to="{name: 'PasswordResetRequest'}" class="underline text-secondary">Forgot password</router-link><br>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-span-12">
-                                    <div class="flex flex-wrap items-center">
-                                        <button type="submit" class="cursor-pointer before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[40px] py-[15px] capitalize font-medium text-white text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">Login</button>
-                                        <p class="ml-[40px]">Dont have an Account? <router-link :to="{name: 'RegisterUser'}" class="text-secondary">Register</router-link></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-span-12 lg:col-span-6 mb-[30px]">
-                            <img src="src/assets/assets/images/contact/image2.png" class="w-full lg:max-w-[538px] h-auto rounded-[10px]" width="546" height="668" alt="image">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
 
          <!-- Footer Start -->
          <footer class="footer bg-[#EEEEEE] pt-[80px] lg:pt-[120px] pb-30 md:pb-[80px] lg:pb-[110px] font-normal bg-no-repeat" style="background-image: url('/src/assets/assets/images/footer/pattern.png');">
@@ -272,34 +221,3 @@
         <!-- Footer End -->
     </div>
 </template>
-
-<script>
-import store from "../store";
-import router from '../router'
-
- 
-export default {
-  data() {
-    return {
-        credentials: {        
-        email: "",        
-        password: "",
-      },
-       
-    };
-  },
-  methods: {
-    async loginUser() {
-     
-      const success = await store.dispatch("login", this.credentials);
-      if (success) {
-        router.push({ name: "User" }); 
-        console.log("login successful!!");
-      } else {
-        // Handle registration failure (e.g., show an error message)
-        console.log("registration error!!");
-      }
-    },
-  },
-};
-</script>

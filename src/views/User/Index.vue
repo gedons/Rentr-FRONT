@@ -1,1 +1,3 @@
-r
+<template>
+    User home
+</template>

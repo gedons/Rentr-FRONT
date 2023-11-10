@@ -120,7 +120,7 @@
         <!-- offcanvas-mobile-menu end -->
         <!-- Header end -->
 
-        <section class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[70%]" style="background-image: url('/src/assets/assets/images/breadcrumb/bg-1.png');">
+        <section class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[70%]" style="background-image: url('/src/assets/assets/images/breadcrumb/bg-1.png')">
             <div class="container">
                 <div class="grid grid-cols-12">
                     <div class="col-span-12">
@@ -144,7 +144,7 @@
           <!-- contact form start -->
           <div class="py-[80px] lg:py-[120px]">
             <div class="container">
-                <form action="#">
+                <form @submit.prevent="registerUser">
                     <div class="grid grid-cols-12 gap-x-[30px] mb-[-30px]">
                         <div class="col-span-12 lg:col-span-6 mb-[30px]">
                             <h2 class="font-lora text-primary text-[24px] sm:text-[30px] leading-[1.277] xl:text-xl mb-[15px] font-medium">
@@ -156,30 +156,30 @@
                             <div class="grid grid-cols-12 gap-x-[20px] gap-y-[35px]">
 
                                 <div class="col-span-12">
-                                    <input class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="text" placeholder="Usename">
+                                    <input  v-model="userData.username" class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="text" placeholder="Full Name">
                                 </div>
 
                                 <div class="col-span-12">
-                                    <input class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="email" placeholder="Email">
+                                    <input  v-model="userData.email" class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="email" placeholder="Email">
                                 </div>
 
                                 <div class="col-span-12">
-                                    <input class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="text" placeholder="Mobile Number">
+                                    <input  v-model="userData.phone" class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="text" placeholder="Mobile Number">
                                 </div>
 
 
                                 <div class="col-span-12">
-                                    <input class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="password" placeholder="Password">
+                                    <input  v-model="userData.password" class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="password" placeholder="Password">
 
                                 </div>
 
                                 <div class="col-span-12">
-                                    <input class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="password" placeholder="Conform Password">
+                                    <input v-model="confirmPassword" class="font-light w-full sm:w-[400px] leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-primary border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] " type="password" placeholder="Conform Password">
 
                                     <div class="flex flex-wrap items-center justify-between w-full sm:w-[400px]">
                                         <div class="flex flex-wrap mt-[15px] items-center">
-                                            <input type="checkbox" id="checkbox1" name="Remember me">
-                                            <label for="checkbox1" class="ml-[5px] cursor-pointer"> I agree with the
+                                            <input type="checkbox" id="checkbox1" v-model="termsAccepted" />
+                                            <label for="checkbox1" class="ml-[5px] cursor-pointer"> I agree with the                        
                                                 <a href="#" class="underline text-secondary">Terms &
                                                     Conditions</a></label><br>
                                         </div>
@@ -190,9 +190,9 @@
 
                                 <div class="col-span-12">
                                     <div class="flex flex-wrap items-center">
-                                        <button type="submit" class="before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[40px] py-[15px] capitalize font-medium text-white text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">Register</button>
+                                        <button type="submit" :class="{ 'disabled' : !termsAccepted, 'cursor-not-allowed': !termsAccepted}" class="cursor-pointer before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[40px] py-[15px] capitalize font-medium text-white text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all">Register</button>
 
-                                        <p class="ml-[40px]">Already have an Account? <a href="login.html" class="text-secondary">Login</a></p>
+                                        <p class="ml-[40px]">Already have an Account? <router-link :to="{name: 'Login'}" class="text-secondary">Login</router-link></p>
 
                                     </div>
                                 </div>
@@ -204,7 +204,6 @@
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
 
@@ -287,3 +286,42 @@
         <!-- Footer End -->
     </div>
 </template>
+
+<script>
+import store from "../store";
+import router from '../router'
+
+ 
+export default {
+  data() {
+    return {
+      userData: {
+        username: "",
+        email: "",
+        phone: "",
+        password: "",
+      },
+      confirmPassword: "",
+      termsAccepted: false,  
+    };
+  },
+  methods: {
+    async registerUser() {
+      if (this.userData.password !== this.confirmPassword || !this.termsAccepted) {
+        // Handle password and terms acceptance validation errors as needed
+        console.log("password does not match");
+        return;
+      }
+
+      const success = await store.dispatch("register", this.userData);
+      if (success) {
+        router.push({ name: "verifyEmail" }); 
+        console.log("registration successful!!");
+      } else {
+        // Handle registration failure (e.g., show an error message)
+        console.log("registration error!!");
+      }
+    },
+  },
+};
+</script>
