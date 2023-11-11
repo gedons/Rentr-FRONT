@@ -14,8 +14,8 @@ const store = createStore({
         try {
           const response = await axiosClient.post("/auth/register", userData);
           const user = response.data; 
-          const authToken = user.token;
-          sessionStorage.setItem("TOKEN", authToken); 
+          // const authToken = user.token;
+          // sessionStorage.setItem("TOKEN", authToken); 
           commit("setUser", user);
           return true;  
         } catch (error) {
@@ -26,10 +26,8 @@ const store = createStore({
       async login({ commit }, credentials) {
         try {
           const response = await axiosClient.post("/auth/login", credentials);
-          const user = response.data;
-          console.log(user);
-          console.log(user.token);
-          sessionStorage.setItem("TOKEN", user.token);
+          const { user, authToken } = response.data; 
+          sessionStorage.setItem("TOKEN", authToken);
           commit("setUser", user);
           return true;  
         } catch (error) {

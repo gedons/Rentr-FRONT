@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import store from "../store"; 
+import axiosClient from "../axios";
 
 const routes = [
   {
@@ -26,7 +27,7 @@ const routes = [
     path: "/verifyEmail",
     name: "verifyEmail",
     component: () => import("../views/verifyEmail.vue"),
-    meta: { requiresAuth: true },  
+    // meta: { requiresAuth: true },  
   },
   {
     path: "/registerAgent",
@@ -73,17 +74,16 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresAuth) {
-    // Route requires authentication
     if (!store.state.user.token) {
-      // User is not authenticated
-      next("/login"); // Redirect to the login page
+      next({ name: "Login" }); 
     } else {
-      next(); // Continue to the requested route
+      // Set the authToken in Axios headers
+      axiosClient.defaults.headers.common["Authorization"] = `Bearer ${store.state.user.token}`;
+      next();
     }
-  } else {
-    // Route doesn't require authentication, proceed
+  } else {    
     next();
   }
 });

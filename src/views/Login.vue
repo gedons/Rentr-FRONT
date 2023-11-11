@@ -193,6 +193,7 @@
             </div>
         </div>
 
+
          <!-- Footer Start -->
          <footer class="footer bg-[#EEEEEE] pt-[80px] lg:pt-[120px] pb-30 md:pb-[80px] lg:pb-[110px] font-normal bg-no-repeat" style="background-image: url('/src/assets/assets/images/footer/pattern.png');">
             <div class="container">
@@ -274,8 +275,7 @@
 </template>
 
 <script>
-import store from "../store";
-import router from '../router'
+import store from '../store';
 
  
 export default {
@@ -289,16 +289,22 @@ export default {
     };
   },
   methods: {
-    async loginUser() {
-     
-      const success = await store.dispatch("login", this.credentials);
-      if (success) {
-        router.push({ name: "User" }); 
-        console.log("login successful!!");
-      } else {
-        // Handle registration failure (e.g., show an error message)
-        console.log("registration error!!");
-      }
+    loginUser() {           
+      this.$store.dispatch('login', this.credentials)
+      .then((success) => {
+	          if (success) {
+	          	this.$toast.default('Login successful.', {
+		            timeout: 3000, 
+		          });
+		        //   this.loading = false;
+	            this.$router.push('/user');
+	          } else {
+	             this.$toast.error('User details does not exist. Confirm and try again!', {
+		            timeout: 9000, 
+		          });
+	            //  this.loading = false;
+	          }
+	     });
     },
   },
 };
